@@ -1,0 +1,19 @@
+//-------------------------------------------------------------------------------------
+// Variables: Typography
+//-------------------------------------------------------------------------------------
+
+$font-family-sans                    : 'Helvetica Neue', sans-serif !default;
+$font-family-serif                   : serif !default;
+$font-family-mono                    : monospace !default;
+
+$font-size-default                   : 16px !default;
+$font-weight-default                 : 300 !default;
+$font-style-default                  : normal !default;
+$line-height-default                 : 1.618 !default;
+$font-family-default                 : 'Lato', $font-family-sans !default;
+
+$font-size-heading                   : inherit !default;
+$font-weight-heading                 : 300 !default;
+$font-style-heading                  : normal !default;
+$line-height-heading                 : 1 !default;
+$font-family-heading                 : 'Lato', $font-family-sans !default;

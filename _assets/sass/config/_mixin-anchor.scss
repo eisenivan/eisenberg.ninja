@@ -1,0 +1,53 @@
+//-------------------------------------------------------------------------------------
+// Mixin: Anchor
+//-------------------------------------------------------------------------------------
+
+@mixin anchor($style: false, $linkColor: $color-link, $hoverColor: false, $activeColor: false) {
+	color: $linkColor;
+	@if $style == 'darken' {
+		@if not $hoverColor {
+			&:hover {
+				color: mix(color('black'), $linkColor, 15%);
+			}
+		} @else {
+			&:hover {
+				color: $hoverColor;
+			}
+		}
+		@if not $activeColor {
+			&:active {
+				color: mix(color('black'), $linkColor, 25%);
+			}
+		} @else {
+			&:active {
+				color: $activeColor;
+			}
+		}
+	}
+	@elseif $style == 'lighten' {
+		@if not $hoverColor {
+			&:hover {
+				color: mix(color('white'), $linkColor, 15%);
+			}
+		} @else {
+			&:hover {
+				color: $hoverColor;
+			}
+		}
+		@if not $activeColor {
+			&:active {
+				color: mix(color('white'), $linkColor, 25%);
+			}
+		} @else {
+			&:active {
+				color: $activeColor;
+			}
+		}
+	}
+	@else {
+		&:hover,
+		&:active {
+			color: $linkColor;
+		}
+	}
+}

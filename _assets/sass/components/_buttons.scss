@@ -1,0 +1,74 @@
+//-------------------------------------------------------------------------------------
+// Buttons: Variables
+//-------------------------------------------------------------------------------------
+
+$btn-color-default                   : color('white') !default;
+$btn-bgcolor-default                 : $color-link !default;
+
+$btn-padding                         : 1em 0 !default;
+
+//-------------------------------------------------------------------------------------
+// Buttons: Mixins
+//-------------------------------------------------------------------------------------
+
+@mixin btn-reset() {
+	line-height: normal;
+	display: inline-block;
+	-webkit-appearance: none;
+	width: auto;
+	padding: $btn-padding;
+	cursor: pointer;
+	transition: all 100ms linear;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: none;
+}
+
+@mixin btn($style, $bgcolor: $btn-bgcolor-default, $color: $btn-color-default) {
+	@if $style == 'darken' {
+		background: $bgcolor;
+		&,
+		&:hover,
+		&:active {
+			color: $color;
+		}
+		&:hover {
+			background: mix(color('black'), $bgcolor, 15%);
+		}
+		&:active {
+			background: mix(color('black'), $bgcolor, 25%);
+		}
+	}
+	@elseif $style == 'lighten' {
+		background: $bgcolor;
+		&,
+		&:hover,
+		&:active {
+			color: $color;
+		}
+		&:hover {
+			background: mix(color('white'), $bgcolor, 15%);
+		}
+		&:active {
+			background: mix(color('white'), $bgcolor, 25%);
+		}
+	}
+	@elseif $style == 'bordered' {
+		border-color: $bgcolor;
+		&,
+		&:hover,
+		&:active {
+			color: $bgcolor;
+		}
+		&:hover,
+		&:active {
+			color: $btn-color-default;
+			background: $bgcolor;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+//-------------------------------------------------------------------------------------
+// Variables: Structure
+//-------------------------------------------------------------------------------------
+
+// File Paths
+$fonts                               : '../fonts' !default;
+$images                              : '../img' !default;
+
+// Gutters
+$gutters: (
+	'sm'                             : 20px,
+	'md'                             : 40px,
+	'lg'                             : 60px
+) !default;
+
+@function gutter($key) {
+	@if map-has-key($gutters, $key) {
+		@return map-get($gutters, $key);
+	}
+	@warn "Unknown '#{$key}' in $gutters.";
+	@return null;
+}
+
+$angle-height                        : gutter('lg') !default;

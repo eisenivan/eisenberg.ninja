@@ -1,0 +1,45 @@
+//-------------------------------------------------------------------------------------
+// Mixin: Font Family
+//-------------------------------------------------------------------------------------
+
+@mixin font-family($type, $color: false) {
+	@if $type == 'default' {
+		font-family: $font-family-default;
+		font-weight: $font-weight-default;
+		font-style: $font-style-default;
+		line-height: $line-height-default;
+		@if $color {
+			color: $color-default;
+		}
+	}
+	@elseif $type == 'heading' {
+		font-family: $font-family-heading;
+		font-size: $font-size-heading;
+		font-weight: $font-weight-heading;
+		font-style: $font-style-heading;
+		line-height: $line-height-heading;
+		@if $color {
+			color: $color-heading;
+		}
+	}
+	@elseif $type == 'alternate' {
+		font-family: $font-family-alternate;
+		font-size: $font-size-alternate;
+		font-weight: $font-weight-alternate;
+		font-style: $font-style-alternate;
+		line-height: $line-height-alternate;
+		@if $color {
+			color: $color-alternate;
+		}
+	}
+	@elseif $type == 'code' {
+		font-family: $font-family-code;
+		font-size: $font-size-code;
+		font-weight: $font-weight-code;
+		font-style: $font-style-code;
+		line-height: $line-height-code;
+		@if $color {
+			color: $color-code;
+		}
+	}
+}

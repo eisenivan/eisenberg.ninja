@@ -1,0 +1,72 @@
+//-------------------------------------------------------------------------------------
+// Helpers
+//-------------------------------------------------------------------------------------
+
+.screen-reader-text {
+	@include hide();
+	&.focusable:active,
+	&.focusable:focus, {
+		@include hide(false);
+	}
+}
+
+.avoid-break {
+	display: inline-block;	
+}
+
+.avoid-break-inside {
+	page-break-inside: avoid;
+}
+
+@media print{    
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+
+@media screen{
+	.only-print {
+		display: none !important;
+	}
+}
+
+%heading {
+	$pos: .85ex;
+	font-size: 2em;
+	position: relative;
+	top: $pos * -1;
+	margin-top: 0;
+	border-bottom: 1px solid;
+	> span {
+		position: relative;
+		top: $pos;
+		padding-right: .5em;
+	}
+}
+
+%meta {
+	font-size: .75em;
+	line-height: 1.3;
+	color: $color-meta;
+}
+
+%tagcloud {
+	@include delist(0 0 1.5rem);
+	font-size: 0;
+	line-height: 1;
+	li {
+		font-size: .75rem;
+		position: relative;
+		display: inline-block;
+		margin-top: 3px;
+		margin-right: 3px;
+		padding: .5em .75em;
+		background-color: color('white');
+		&::after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			content: '';
+		}
+	}
+}

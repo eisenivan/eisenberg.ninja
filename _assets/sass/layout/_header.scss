@@ -1,0 +1,63 @@
+//-------------------------------------------------------------------------------------
+// Header
+//-------------------------------------------------------------------------------------
+
+.site {
+	//overflow: hidden;
+}
+.header {
+	position: relative;
+	min-height: 80vh;
+	padding-top: 10vw;
+	padding-bottom: $angle-height;
+	color: $color-header;
+	background: $bgcolor-header;
+	background-image: url('#{$images}/header.jpg');
+	background-image: url('#{$images}/header.jpg'), radial-gradient(ellipse farthest-corner at 55% 45%, color('yellow'), rgba(color('yellow'), .5) 20%, transparent 60%), linear-gradient(165deg, #95b09d 55%, #036375 80%);
+	background-repeat: no-repeat;
+	background-position: 70% 0%;
+	background-size: cover;
+	&::after {
+		// @include triangle(100vw $angle-height, $bgcolor-section-1, down-right);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		content: '';
+	}
+}
+
+.site-title-container {
+	@media screen {
+		position: absolute;
+		bottom: 40px;	
+	}
+}
+
+.site-title {
+	
+	font-size: 13vmin;
+	font-weight: 700;
+	margin: 0 0 4px;
+	color: $color-header;
+
+	@include media('>=tablet') {
+		font-size: 16vmin;
+	}
+}
+
+.site-description {
+	@include font-family('heading');
+	font-size: 11vmin;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.site-title,
+.site-description {
+	line-height: .875;
+	letter-spacing: -.03em;
+	text-rendering: geometricPrecision;
+	opacity: .85;
+}

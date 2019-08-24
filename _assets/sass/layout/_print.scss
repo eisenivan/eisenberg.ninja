@@ -1,0 +1,174 @@
+//-------------------------------------------------------------------------------------
+// Print
+//-------------------------------------------------------------------------------------
+
+@media print {
+	*,
+	*:before,
+	*:after {
+		text-shadow: none !important;
+		color: #000000 !important;
+		background: transparent !important;
+		box-shadow: none !important;
+		font-family: $font-family-sans !important;
+	}
+
+	html, body {
+		height: 99%;
+	}
+
+	body {
+	  margin: 15mm 25mm 15mm 25mm;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	pre,
+	blockquote {
+		page-break-inside: avoid;
+		border: 1px solid #999999;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+	body {
+		font-size: 9pt;
+	}
+
+	.container {
+		width: 100%;
+		max-width: none;
+	}
+
+	.header {
+		min-height: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		&::after {
+			display: none;
+		}
+	}
+
+	.section {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		&::before {
+			display: none;
+		}
+	}
+
+	.site-title {
+		font-size: 2em;
+	}
+	.site-description {
+		font-size: 1em;
+		text-align: left;
+		padding-bottom: 1em;
+	}
+	.site-title,
+	.site-description {
+		line-height: 1;
+		opacity: 1;
+		mix-blend-mode: unset;
+	}
+
+	.section-title {
+		margin: 0 0 0.8em;
+		border-bottom: none;
+		.section-5 & {
+			margin-bottom: 1rem;
+		}
+		&,
+		span {
+			position: static;
+		}
+	}
+
+	.job {
+		padding-bottom: 1em;
+	}
+	.job-clients-list,
+	.skills-list {
+		line-height: inherit;
+		li {
+			display: inline;
+			padding: 0;
+			&::after {
+				content: ',';
+				position: static;
+			}
+			&:last-child::after {
+				display: none;
+			}
+		}
+	}
+	.portfolio-list {
+		display: block;
+		li {
+			display: inline;
+			&::after {
+				content: ',';
+				position: static;
+			}
+			&:last-child::after {
+				display: none;
+			}
+		}
+		a {
+			display: inline;
+			padding: 0;
+			border: none;
+		}
+	}
+
+	.footer {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		&::before {
+			display: none;
+		}
+	}
+	.tel {
+		margin-bottom: .5em;
+	}
+	.social-icon {
+		position: static;
+		width: auto;
+		height: auto;
+		text-indent: 0;
+		.svg {
+			display: none;
+		}
+		&::before {
+			content: ' (' attr(href) ')';
+		}
+	}
+
+
+}

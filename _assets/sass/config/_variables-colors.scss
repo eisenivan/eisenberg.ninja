@@ -1,0 +1,72 @@
+//-------------------------------------------------------------------------------------
+// Variables: Colors
+//-------------------------------------------------------------------------------------
+
+$background                          : #ffffff !default;
+$foreground                          : #000000 !default;
+
+$greyscale: (
+	'white'                          : $background,
+	'grey-lightest'                  : mix($background, $foreground, 98%),
+	'grey-lighter'                   : mix($background, $foreground, 95%),
+	'grey-light'                     : mix($background, $foreground, 90%),
+	'grey-dark'                      : mix($background, $foreground, 60%),
+	'grey-darker'                    : mix($background, $foreground, 40%),
+	'grey-darkest'                   : mix($background, $foreground, 20%),
+	'black'                          : $foreground
+) !default;
+
+$hues: (
+	'yellow'                         : #dadada,
+	'teal'                           : #30838c,
+	'orange'						 : #d85413
+) !default;
+
+$colors: map-merge($greyscale, $hues) !default;
+
+@function color($key) {
+	@if map-has-key($colors, $key) {
+		@return map-get($colors, $key);
+	}
+	@warn "Unknown '#{$key}' in $colors.";
+	@return null;
+}
+
+//-------------------------------------------------------------------------------------
+
+$bdcolor-rgba-grey-lightest          : rgba(color('black'), .02) !default;
+$bdcolor-rgba-grey-lighter           : rgba(color('black'), .05) !default;
+$bdcolor-rgba-grey-light             : rgba(color('black'), .1) !default;
+$bdcolor-rgba-grey-dark              : rgba(color('black'), .4) !default;
+$bdcolor-rgba-grey-darker            : rgba(color('black'), .6) !default;
+$bdcolor-rgba-grey-darkest           : rgba(color('black'), .8) !default;
+
+$bdcolor-hr                          : $bdcolor-rgba-grey-light !default;
+
+//-------------------------------------------------------------------------------------
+
+$color-selection                     : color('white') !default;
+$bgcolor-selection                   : color('teal') !default;
+
+//-------------------------------------------------------------------------------------
+
+$color-link                          : color('teal') !default;
+$color-meta                          : color('grey-dark') !default;
+$color-default                       : color('grey-darker') !default;
+$color-strong                        : color('black') !default;
+$color-heading                       : color('black') !default;
+$color-strong                        : color('black') !default;
+
+//-------------------------------------------------------------------------------------
+
+$bgcolor-header                      : color('teal') !default;
+$color-header                        : color('orange') !default;
+
+$bgcolor-section-1                   : color('white') !default;
+$bgcolor-section-2                   : mix(color('yellow'), color('grey-lighter'), 10%) !default;
+$bgcolor-section-3                   : color('white') !default;
+$bgcolor-section-4                   : mix(color('yellow'), color('grey-lighter'), 10%) !default;
+$bgcolor-section-5                   : color('white') !default;
+
+$bgcolor-footer                      : color('teal') !default;
+$color-footer                        : color('white') !default;
