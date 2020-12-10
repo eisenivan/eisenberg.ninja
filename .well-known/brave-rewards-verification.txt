@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: eisenberg.ninja
+Token: aeed5744464f9eec52e99eb51e59c67d057d0d7d0a2f85f9c96a09b508f69c00
