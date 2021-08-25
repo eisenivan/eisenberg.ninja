@@ -1,18 +1,12 @@
 {
   "name": "eisenberg.ninja",
   "version": "1.0.0",
-  "description": "michaelschwobe.com",
+  "description": "eisenberg.ninja",
   "main": "gulpfile.js",
   "scripts": {
     "deploy": "surge --project ./ --domain eisenberg.ninja"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://michaelschwobe@bitbucket.org/michaelschwobe/michaelschwobe.git"
-  },
-  "author": "Michael Schwobe",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/michaelschwobe/michaelschwobe#readme",
   "engines": {
     "node": ">=0.12.7",
     "npm": ">=2.13.1"
